@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="bg-blue-700 border-gray-200 ">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-7 text-white">
+    <nav className="bg-blue-700 border-gray-200 xl:w-full ">
+      <div className="xl:max-w-screen-xl max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-7 text-white">
         <a href="https://flowbite.com/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap ">
             Food Recipe App
@@ -25,15 +25,6 @@ export default function Navbar() {
                 className="block py-2 pl-3 pr-4 rounded  md:p-0 md:blue-500 ay-700 white md:ansparent"
               >
                 About
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4  rounded  md:p-0  ay-700 white md:ansparent"
-              >
-                Contact
               </a>
             </li>
           </ul>

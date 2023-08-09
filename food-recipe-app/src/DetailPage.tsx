@@ -45,7 +45,7 @@ function DetailPage() {
   const strIngredient4 = food?.strIngredient4;
 
   return (
-    <div className="bg-blue-200">
+    <div className="bg-blue-200 md:h-screen xl:h-auto">
       <Navbar />
       <div className="text-xl bg-blue-200 justify-center flex h-32 items-center">
         <h1 className="text-3xl">{strMeal}</h1>
@@ -53,8 +53,7 @@ function DetailPage() {
       <div className="flex justify-center">
         <img
           src={strMealThumb}
-          alt="food"
-          className="w-96 h-80 rounded-lg shadow-md shadow-blue-300 hover:shadow-blue-500"
+          className="xl:w-96 xl:h-80 w-60 h-52 rounded-lg shadow-md shadow-blue-300 hover:shadow-blue-500"
         />
       </div>
       <div className="flex justify-center mt-5">
@@ -64,7 +63,7 @@ function DetailPage() {
         <h1 className="text-2xl">Ingredients:</h1>
       </div>
       <div className="flex justify-center mt-5">
-        <ul className="flex gap-5">
+        <ul className="flex lg:gap-5 gap-3 flex-shrink-0">
           <li>{strIngredient1}</li>
           <li>{strIngredient2}</li>
           <li>{strIngredient3}</li>
@@ -74,8 +73,8 @@ function DetailPage() {
       <div className="flex justify-center mt-5 w-[80%] mx-auto ">
         <h1 className="text-2xl">Instructions:</h1>
       </div>
-      <div className="flex justify-center mt-5 w-[80%] self-center mx-auto">
-        <p className="text-center">{strInstructions}</p>
+      <div className="flex justify-center mt-5 w-[80%] xl:w-[80%] self-center mx-auto">
+        <p className="">{strInstructions}</p>
       </div>
     </div>
   );

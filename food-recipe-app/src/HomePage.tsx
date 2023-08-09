@@ -22,31 +22,43 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-blue-200 ">
+    <div className="bg-gray-200 ">
       <Navbar />
-      <div className="bg-blue-200">
+      <div className="">
         <h1 className="text-4xl text-center mt-10">Food Recipe App</h1>
       </div>
       {isLoading ? (
-        <div className="w-[80%] grid grid-cols-4 items-center align-center gap-20 mt-20 mx-auto">
+        <div className="w-[90%] grid md:grid-cols-4 grid-cols-3 items-center align-center gap-20 mt-20 mx-auto">
           {[...Array(8)].map((_, index) => (
-            <div className="h-48 rounded-md animate-pulse" key={index}>
-              <div className="bg-blue-300 h-full w-full rounded-lg shadow-md"></div>
+            <div
+              className=" h-[348px] rounded-md border bg-yellow-200 rounded-t-full shadow-md hover:shadow-lg"
+              key={index}
+            >
+              <div className="w-full h-[238px] rounded-full bg-yellow-100  "></div>
+              <div className="flex items-center justify-center">
+                <h1 className="text-center text-lg mt-5"></h1>
+              </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="w-[80%] grid grid-cols-4 items-center align-center gap-20 mt-20 mx-auto">
+        <div className="lg:w-[90%] w-full px-7 grid xl:grid-cols-4 md:grid-cols-3 grid-cols-1 items-center align-center gap-20 mt-20 mx-auto">
           {recipes.meals?.map((recipe: any) => (
-            <div className=" h-48 rounded-md" key={recipe.idMeal}>
-              <Link to={`/detail/${recipe.idMeal}`}>
+            <Link to={`/detail/${recipe.idMeal}`}>
+              <div
+                className=" sm:h-[320px] lg:h-[348px] rounded-md border bg-yellow-200 rounded-t-full shadow-md hover:shadow-lg"
+                key={recipe.idMeal}
+              >
                 <img
                   src={recipe.strMealThumb}
                   alt="food"
-                  className="w-full h-full rounded-lg shadow-md shadow-blue-300 hover:shadow-blue-500"
+                  className="w-full sm:h-[190px] lg:h-[238px] rounded-full  "
                 />
-              </Link>
-            </div>
+                <div className="flex items-center justify-center">
+                  <h1 className="text-center text-lg mt-5">{recipe.strMeal}</h1>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       )}
